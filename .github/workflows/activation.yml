@@ -12,14 +12,15 @@ on:
         name: Request manual activation file 🔑
         runs-on: ubuntu-latest
         steps:  
+        
         - name: Request manual activation file
         id: getManualLicenseFile
         uses: webbertakken/unity-request-manual-activation-file@v1.1
         with:
         unityVersion: 2020.1.16f1
   # Allows you to run this workflow manually from the Actions tab
-  - name: Expose as artifact
-  uses: actions/upload-artifact@v1
-  with:
-    name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-    path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+        - name: Expose as artifact
+        uses: actions/upload-artifact@v1
+        with:
+        name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+        path: ${{ steps.getManualLicenseFile.outputs.filePath }}
