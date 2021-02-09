@@ -8,7 +8,7 @@ on: [push]
 jobs:
     activation:
         name: Request manual activation file 🔑
-        runs-on: windows-latest
+        runs-on: self-hosted
         steps:
         
             -name: Request manual activation file
