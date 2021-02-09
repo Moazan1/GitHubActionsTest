@@ -11,11 +11,11 @@ jobs:
         runs-on: windows-latest
         steps:  
         
-        - name: Request manual activation file
-        id: getManualLicenseFile
-        uses: webbertakken/unity-request-manual-activation-file@v1.1
-        with:
-            unityVersion: 2020.1.16f1           
+            - name: Request manual activation file
+            id: getManualLicenseFile
+            uses: webbertakken/unity-request-manual-activation-file@v1.1
+            with:
+                unityVersion: 2020.1.16f1           
             
 
     upload:
@@ -24,9 +24,9 @@ jobs:
         needs: [activation]
         steps:
         # Upload artifact (Unity_v20XX.X.XXXX.alf)   
-        - name: Expose as artifact
-        id: Artifact
-        uses: actions/upload-artifact@v1
-        with:
-            name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-            path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+            - name: Expose as artifact
+            id: Artifact
+            uses: actions/upload-artifact@v1
+            with:
+                name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+                path: ${{ steps.getManualLicenseFile.outputs.filePath }}
