@@ -3,7 +3,7 @@
 name: Activate
 
 # Controls when the action will run. 
-on:[push] 
+on: [push] 
 
 jobs:
     activation:
@@ -21,6 +21,7 @@ jobs:
 
         # Upload artifact (Unity_v20XX.X.XXXX.alf)   
         - name: Expose as artifact
+        
         uses: actions/upload-artifact@v1
         with:
             name: ${{ steps.getManualLicenseFile.outputs.filePath }}
