@@ -13,7 +13,7 @@ jobs:
         
             - name: Request manual activation file
               id: getManualLicenseFile
-              uses: game-ci/unity-request-manual-activation-file@v1.1
+              uses: game-ci/unity-request-activation-file@v1.1
               with:
                  unityVersion: 2020.1.16f1           
 
